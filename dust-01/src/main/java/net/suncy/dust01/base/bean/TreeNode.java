@@ -9,22 +9,23 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class TreeNode {
+public class TreeNode<T extends Comparable> {
 
-    private int val ;
+    private T val ;
     private TreeNode left ;
     private TreeNode right ;
+    private int height;
 
-    public TreeNode(int val) {
+    public TreeNode(T val) {
         this.val = val;
     }
 
-    public TreeNode addLeft(int val ){
+    public TreeNode addLeft(T val ){
         this.left =  new TreeNode(val);
         return this.left ;
     }
 
-    public TreeNode addRight(int val ) {
+    public TreeNode addRight(T val ) {
         this.right = new TreeNode( val ) ;
         return this.right ;
     }
